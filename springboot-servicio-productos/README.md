@@ -3,7 +3,7 @@
 Este archivo se ejecuta automaticamente al levantar el servicio. Solo hay INSERTS.
 
 ```
-	$ ls src/main/resource/import.sql
+$ ls src/main/resource/import.sql
 ```
 
 ## SQL Adicional	
@@ -19,3 +19,21 @@ CREATE TABLE `productos` (
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=1;
 ```
+
+# Run
+
+```
+$ mvn spring-boot:run
+```
+Or
+```
+$ java -jar target/*-0.0.1-SNAPSHOT.jar
+```
+
+# Go to
+
+```
+$ curl http://localhost:8001/listar
+$ curl http://localhost:8001/ver/1
+```
+
