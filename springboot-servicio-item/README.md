@@ -22,4 +22,3 @@ $ curl http://localhost:8005/obtenet-config
 # obligados a Reiniciar el Microservicio.
 $ curl -X POST http://localhost:8005/actuator/refresh
 ```
-
