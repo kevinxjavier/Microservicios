@@ -21,22 +21,22 @@ https://start.spring.io/starter.zip?name=springboot-servicio-config&groupId=com.
 
 Orden para ejecutar los proyectos
 
-01- springboot-servicio-eureka		[Eureka]
+01- springboot-servicio-config		[Config]
 	$ mvn spring-boot:run
 
-02- springboot-servicio-productos		[Service, H2, JPA]
+02- springboot-servicio-eureka		[Eureka]
+	$ mvn spring-boot:run
+
+03- springboot-servicio-productos		[Service, H2, JPA]
 	$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=8001
 	$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=9001
 	# OR
 	$ SERVER_PORT=8001 mvn spring-boot:run
 	$ SERVER_PORT=9001 mvn spring-boot:run
 	
-03- springboot-servicio-item			[RestTemplate - Feign - Ribbon - Hystrix]
+04- springboot-servicio-item			[RestTemplate - Feign - Ribbon - Hystrix]
 	$ mvn spring-boot:run
 
-04-	springboot-servicio-zuul		[Zuul]
-	$ mvn spring-boot:run
-
-05- springboot-servicio-config		[Config]
+05-	springboot-servicio-zuul		[Zuul]
 	$ mvn spring-boot:run
 

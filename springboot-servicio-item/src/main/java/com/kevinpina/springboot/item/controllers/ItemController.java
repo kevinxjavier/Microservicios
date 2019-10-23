@@ -1,10 +1,15 @@
 package com.kevinpina.springboot.item.controllers;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +31,9 @@ public class ItemController {
 	public List<Item> listar() {
 		return itemService.findAll();
 	}
+	
+	@Value("${configuracion.texto}")
+	private String texto;
 	
 	@HystrixCommand(fallbackMethod = "metodoAlternativo")
 	@GetMapping("/ver/{id}/cantidad/{cantidad}")
@@ -54,5 +62,13 @@ public class ItemController {
 		item.setProducto(producto);
 		
 		return item;
+	}
+	
+	@GetMapping("obtenet-config")
+	public ResponseEntity<?> obtenerConfig(@Value("${server.port}") String port) {
+		Map<String, String> json = new HashMap<>();
+		json.put("texto", texto);
+		json.put("port", port);
+		return new ResponseEntity<Map<String, String>>(json, HttpStatus.OK);
 	}
 }
