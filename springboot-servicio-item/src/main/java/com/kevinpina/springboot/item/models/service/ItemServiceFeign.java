@@ -28,10 +28,10 @@ import com.kevinpina.springboot.item.models.Item;
  *    private ...
  *  }
  *
- *  En esta app usamos las dos formas, con usar una basta.
+ *  Podemos usar ambas formas al mismo tiempo sin inconvenientes.
  */
 @Service("serviceFeign")
-@Primary
+//@Primary
 public class ItemServiceFeign implements ItemService {
 
 	@Autowired

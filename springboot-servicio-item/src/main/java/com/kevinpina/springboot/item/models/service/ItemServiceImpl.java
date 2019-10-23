@@ -16,7 +16,8 @@ import com.kevinpina.springboot.item.models.Producto;
 @Service
 public class ItemServiceImpl implements ItemService {
 
-	private final String ENDPOINT = "http://localhost:8001";
+	//private final String ENDPOINT = "http://localhost:8001";
+	private final String ENDPOINT = "http://servicio-productos";
 
 	@Autowired
 	private RestTemplate clienteRest;

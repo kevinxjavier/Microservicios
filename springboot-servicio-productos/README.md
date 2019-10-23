@@ -30,10 +30,25 @@ Or
 $ java -jar target/*-0.0.1-SNAPSHOT.jar
 ```
 
+## Run recommended
+```
+$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=8001
+$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=9001
+```
+Or
+```
+$ SERVER_PORT=8001 mvn spring-boot:run
+$ SERVER_PORT=9001 mvn spring-boot:run
+```
+
 # Go to
 
 ```
 $ curl http://localhost:8001/listar
+$ curl http://localhost:9001/listar
+$ curl http://localhost:[PORT]/listar
 $ curl http://localhost:8001/ver/1
+$ curl http://localhost:9001/ver/1
+$ curl http://localhost:[PORT]/ver/1
 ```
 
