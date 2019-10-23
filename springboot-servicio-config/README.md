@@ -13,6 +13,7 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 ```
 $ curl http://localhost:8888/servicio-items/default
 $ curl http://localhost:8888/servicio-items/dev
+$ curl http://localhost:8888/servicio-items/prod
 
 ```
 
