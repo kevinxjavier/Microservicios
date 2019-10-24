@@ -30,13 +30,13 @@ public class Producto implements Serializable {
 	private String nombre;
 
 	private double precio;
-
-	@Transient
-	private Integer port;
-
+	
 	@Column(name = "fecha_creacion")
 	@Temporal(TemporalType.DATE) // Formato Fecha
 	private Date fechaCreacion;
+	
+	@Transient		// Esto hace que no se Serialize y que no forme parte del campo de la Tabla
+	private Integer port;
 
 	public Long getId() {
 		return id;

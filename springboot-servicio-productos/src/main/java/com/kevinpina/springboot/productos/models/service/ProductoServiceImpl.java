@@ -27,4 +27,16 @@ public class ProductoServiceImpl implements IProductoService{
 		return productoDao.findById(id).orElse(null);	// Si no lo encuentra arroja una Exception asi que mejor devolvemos null
 	}
 
+	@Override
+	@Transactional
+	public Producto save(Producto producto) {
+		return productoDao.save(producto);
+	}
+
+	@Override
+	@Transactional
+	public void deleteById(Long id) {
+		productoDao.deleteById(id);
+	}
+
 }
