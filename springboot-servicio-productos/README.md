@@ -50,5 +50,47 @@ $ curl http://localhost:[PORT]/listar
 $ curl http://localhost:8001/ver/1
 $ curl http://localhost:9001/ver/1
 $ curl http://localhost:[PORT]/ver/1
+
+[POST]	http://192.168.1.100:[PORT]/crear
+Body | Raw | JSON
+{
+	"nombre": "Samsung Galaxy 12",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}
+
+
+$ curl -X POST \
+  http://192.168.1.100:[PORT]/crear \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"nombre": "Xiomi Mi 7",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}'
+
+----------------------------------
+[PUT]	http://192.168.1.100:[PORT]/editar/1
+Body | Raw | JSON
+{
+	"nombre": "Samsung Galaxy 12",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}
+
+
+$ curl -X PUT \
+  http://192.168.1.100:[PORT]/editar/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"nombre": "Samsung Galaxy 11",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}'
+
+----------------------------------
+[DELETE]	http://192.168.1.100:[PORT]/eliminar/101
+
+$ curl -X DELETE http://192.168.1.100:[PORT]/eliminar/100
 ```
 

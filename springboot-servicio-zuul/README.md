@@ -22,4 +22,46 @@ $ curl http://localhost:8090/api/items/obtener-config
 # Solo funciona para cambiar configuraciones propias de nosotros en Spring Cloud Config. Puerto y configuraciones de Base de Datos estamos 
 # obligados a Reiniciar el Microservicio. Si el Repo Git esta en local no es necesario hacer commit.
 $ curl -X POST http://localhost:8090/api/items/actuator/refresh
+
+[POST]	http://192.168.1.100:8090/api/productos/crear
+Body | Raw | JSON
+{
+	"nombre": "Samsung Galaxy 12",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}
+
+
+$ curl -X POST \
+  http://192.168.1.100:8090/api/productos/crear \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"nombre": "Xiomi Mi 7",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}'
+
+----------------------------------
+[PUT]	http://192.168.1.100:8090/api/productos/editar/1
+Body | Raw | JSON
+{
+	"nombre": "Samsung Galaxy 12",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}
+
+
+$ curl -X PUT \
+  http://192.168.1.100:8090/api/productos/editar/1 \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"nombre": "Samsung Galaxy 11",
+	"precio": 1500,
+	"fechaCreacion": "2019-10-23"
+}'
+
+----------------------------------
+[DELETE]	http://192.168.1.100:8090/api/productos/eliminar/101
+
+$ curl -X DELETE http://192.168.1.100:8090/api/productos/eliminar/100
 ```
