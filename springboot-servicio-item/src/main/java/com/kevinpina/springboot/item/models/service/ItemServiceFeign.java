@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.kevinpina.springboot.item.clientes.ProductoClienteRest;
 import com.kevinpina.springboot.item.models.Item;
+import com.kevinpina.springboot.item.models.Producto;
 
 /**
  * Forma 1:
@@ -45,6 +46,24 @@ public class ItemServiceFeign implements ItemService {
 	@Override
 	public Item findById(Long id, Integer cantidad) {
 		return new Item(productoClienteRest.detalle(id), cantidad);
+	}
+
+	@Override
+	public Producto save(Producto producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Producto update(Producto producto, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
