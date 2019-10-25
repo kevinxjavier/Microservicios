@@ -17,14 +17,15 @@ https://start.spring.io/starter.zip?name=springboot-servicio-zuul&groupId=com.ke
 https://start.spring.io/starter.zip?name=springboot-servicio-config&groupId=com.kevinpina.springboot.config&artifactId=springboot-servicio-config&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.config&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-config-server
 
 - Commons (JPA, H2)
-https://start.spring.io/starter.zip?name=springboot-servicio.commons&groupId=com.kevinpina.springboot.commons&artifactId=springboot-servicio.commons&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.commons&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=data-jpa&dependencies=h2
+https://start.spring.io/starter.zip?name=springboot-servicio-commons&groupId=com.kevinpina.springboot.commons&artifactId=springboot-servicio-commons&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.commons&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=data-jpa&dependencies=h2
 ```
 
 # Run
 
 Orden para ejecutar los proyectos
 
-00- springboot-servicio.commons			[Libreria Commons]
+00- springboot-servicio-commons			[Libreria Commons]
+	$ mvn install
 
 01- springboot-servicio-config			[Config]
 	$ mvn spring-boot:run

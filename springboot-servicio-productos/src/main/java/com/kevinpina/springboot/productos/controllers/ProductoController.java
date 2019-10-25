@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kevinpina.springboot.productos.models.entity.Producto;
+import com.kevinpina.springboot.commons.models.entity.Producto;
 import com.kevinpina.springboot.productos.models.service.IProductoService;
 
 @RestController

@@ -2,7 +2,7 @@ package com.kevinpina.springboot.productos.models.service;
 
 import java.util.List;
 
-import com.kevinpina.springboot.productos.models.entity.Producto;
+import com.kevinpina.springboot.commons.models.entity.Producto;
 
 public interface IProductoService {
 	

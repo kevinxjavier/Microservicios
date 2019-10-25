@@ -2,6 +2,10 @@ package com.kevinpina.springboot.item.models;
 
 import java.util.Date;
 
+@Deprecated // La coloco deprecada porque ahora usamos el Producto.class de la Lib
+			// no usamos @EntityScan en la clase principal SpringbootServicioItemApplication
+			// porque no necesitamos cargar Producto como Bean @Entity como en el proyecto
+			// servicio-productos. 
 public class Producto {
 
 	private Long id;

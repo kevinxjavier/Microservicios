@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.kevinpina.springboot.item.clientes.ProductoClienteRest;
 import com.kevinpina.springboot.item.models.Item;
-import com.kevinpina.springboot.item.models.Producto;
+import com.kevinpina.springboot.commons.models.entity.Producto;
 
 /**
  * Forma 1:

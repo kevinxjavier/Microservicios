@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.kevinpina.springboot.item.models.Producto;
+import com.kevinpina.springboot.commons.models.entity.Producto;
 
 /**
  * Declarando que es un cliente Feign y el name="servicio-productos" es el

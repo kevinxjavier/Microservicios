@@ -13,6 +13,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+@Deprecated // La coloco deprecada porque ahora usamos el Producto.class de la Lib
+			// com.kevinpina.springboot.commons adicionalmente este package esta fuera del contexto 
+			// de esta App de SpringBoot ya que no tiene el mismo nombre de paquetes, para que la App 
+			// le haga un Scan y cargue los Beans @Entity, @Repository, @Controller, etc, usamos el
+			// @EntityScan({"paquete1", "paquete2"}) en la clase principal SpringbootServicioProductosApplication.
 @Entity
 @Table(name = "productos") // Opcional, sino se especifica toma como nombre de la tabla el nombre de la
 							// clase
@@ -30,12 +35,12 @@ public class Producto implements Serializable {
 	private String nombre;
 
 	private double precio;
-	
+
 	@Column(name = "fecha_creacion")
 	@Temporal(TemporalType.DATE) // Formato Fecha
 	private Date fechaCreacion;
-	
-	@Transient		// Esto hace que no se Serialize y que no forme parte del campo de la Tabla
+
+	@Transient // Esto hace que no se Serialize y que no forme parte del campo de la Tabla
 	private Integer port;
 
 	public Long getId() {

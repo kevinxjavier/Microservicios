@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kevinpina.springboot.item.models.Item;
-import com.kevinpina.springboot.item.models.Producto;
+import com.kevinpina.springboot.commons.models.entity.Producto;
 import com.kevinpina.springboot.item.models.service.ItemService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
