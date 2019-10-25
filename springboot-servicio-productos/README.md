@@ -9,6 +9,8 @@ $ ls src/main/resource/import.sql
 ## SQL Adicional	
 
 ```
+-- No es necesario ya que se crea dinamicamente por JPA
+
 DROP TABLE `productos`;
 
 CREATE TABLE `productos` (
