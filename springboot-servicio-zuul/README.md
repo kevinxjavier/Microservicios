@@ -23,6 +23,8 @@ $ curl http://localhost:8090/api/items/obtener-config
 # obligados a Reiniciar el Microservicio. Si el Repo Git esta en local no es necesario hacer commit.
 $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 
+### Productos
+
 [POST]	http://192.168.1.100:8090/api/productos/crear
 Body | Raw | JSON
 {
@@ -64,4 +66,39 @@ $ curl -X PUT \
 [DELETE]	http://192.168.1.100:8090/api/productos/eliminar/101
 
 $ curl -X DELETE http://192.168.1.100:8090/api/productos/eliminar/100
+
+### Items
+
+[POST]	http://192.168.1.100:8090/api/productos/crear
+Body | Raw | JSON
+
+$ curl -X POST \
+  http://192.168.1.100:8090/api/productos/crear \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"id": null,
+	"nombre": "Anzel",
+	"precio": 1978,
+	"fechaCreacion": "2018-10-09"
+}'
+
+----------------------------------
+[PUT] 	http://192.168.1.100:8090/api/productos/editar/101
+Body | Raw | JSON
+
+$ curl -X PUT \
+  http://192.168.1.100:8090/api/productos/editar/101 \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"id": null,
+	"nombre": "New Anzel",
+	"precio": 2000
+}'
+
+----------------------------------
+[DELETE]	http://192.168.1.100:8090/api/productos/eliminar/103
+
+$ curl -X DELETE http://192.168.1.100:8090/api/productos/eliminar/103
+
 ```
+
