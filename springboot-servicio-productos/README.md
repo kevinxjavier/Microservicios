@@ -46,6 +46,7 @@ $ SERVER_PORT=9001 mvn spring-boot:run
 # Go to
 
 ```
+[GET]
 $ curl http://localhost:8001/listar
 $ curl http://localhost:9001/listar
 $ curl http://localhost:[PORT]/listar
@@ -53,14 +54,9 @@ $ curl http://localhost:8001/ver/1
 $ curl http://localhost:9001/ver/1
 $ curl http://localhost:[PORT]/ver/1
 
+----------------------------------
 [POST]	http://192.168.1.100:[PORT]/crear
 Body | Raw | JSON
-{
-	"nombre": "Samsung Galaxy 12",
-	"precio": 1500,
-	"fechaCreacion": "2019-10-23"
-}
-
 
 $ curl -X POST \
   http://192.168.1.100:[PORT]/crear \
@@ -74,12 +70,6 @@ $ curl -X POST \
 ----------------------------------
 [PUT]	http://192.168.1.100:[PORT]/editar/1
 Body | Raw | JSON
-{
-	"nombre": "Samsung Galaxy 12",
-	"precio": 1500,
-	"fechaCreacion": "2019-10-23"
-}
-
 
 $ curl -X PUT \
   http://192.168.1.100:[PORT]/editar/1 \

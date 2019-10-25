@@ -45,7 +45,10 @@ Orden para ejecutar los proyectos
 	
 04- springboot-servicio-item			[RestTemplate - Feign - Ribbon - Hystrix]
 	$ mvn spring-boot:run
+	
+05- springboot-servicio-usuarios		[Rest Repository]
+	$ mvn spring-boot:run
 
-05-	springboot-servicio-zuul			[Zuul]
+06-	springboot-servicio-zuul			[Zuul]
 	$ mvn spring-boot:run
 
