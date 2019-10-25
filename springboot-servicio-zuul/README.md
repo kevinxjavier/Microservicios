@@ -99,6 +99,5 @@ $ curl -X PUT \
 [DELETE]	http://192.168.1.100:8090/api/productos/eliminar/103
 
 $ curl -X DELETE http://192.168.1.100:8090/api/productos/eliminar/103
-
 ```
 
