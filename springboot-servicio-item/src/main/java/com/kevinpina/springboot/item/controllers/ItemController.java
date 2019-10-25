@@ -32,8 +32,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class ItemController {
 
 	@Autowired
-//	@Qualifier("serviceFeign")
-	@Qualifier("itemServiceImpl")
+	@Qualifier("serviceFeign")
+//	@Qualifier("itemServiceImpl")
 	private ItemService itemService;
 
 	@Autowired
