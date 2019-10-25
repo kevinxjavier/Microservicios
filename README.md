@@ -24,6 +24,8 @@ https://start.spring.io/starter.zip?name=springboot-servicio.commons&groupId=com
 
 Orden para ejecutar los proyectos
 
+00- springboot-servicio.commons			[Libreria commons]
+
 01- springboot-servicio-config			[Config]
 	$ mvn spring-boot:run
 
