@@ -8,7 +8,7 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kevinpina.springboot.item</groupId>
+	<groupId>com.kevinpina.springboot</groupId>
 	<artifactId>springboot-servicio-item</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-item</name>

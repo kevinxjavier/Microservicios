@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.kevinpina.springboot.productos</groupId>
+	<groupId>com.kevinpina.springboot</groupId>
 	<artifactId>springboot-servicio-productos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-productos</name>

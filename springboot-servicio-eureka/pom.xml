@@ -8,7 +8,7 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kevinpina.springboot.eureka</groupId>
+	<groupId>com.kevinpina.springboot</groupId>
 	<artifactId>springboot-servicio-eureka</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-eureka</name>
