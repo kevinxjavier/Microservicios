@@ -51,7 +51,7 @@ $ curl -X PUT \
 }'
 
 ----------------------------------
-[DELETE]	http://192.168.1.100:8005/eliminar/103
-
+[DELETE]
 $ curl -X DELETE http://192.168.1.100:8005/eliminar/103
 ```
+

@@ -21,7 +21,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // Usar este si se usa, MySQL, H2, SQLServer
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT si se usa, MySQL, H2, SQLServer
 	private Long id;
 
 	@Column(unique = true, length = 20)
@@ -41,7 +41,7 @@ public class Usuario implements Serializable {
 											// FetchType.EAGER trae los usuarios con los Roles
 											// FetchType.LAZY solo se trae usuarios y los roles solo se llaman cuando se invoca getRoles()
 	@JoinTable(name = "usuarios_to_roles", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"), uniqueConstraints = {@UniqueConstraint(columnNames = {"id_usuario", "id_rol"})})
-		// @JoinTable cambia el nombre de la tabla intermedia
+		// @JoinTable cambia el nombre de la tabla intermedia a usuarios_to_roles
 		// joinColumns cambia el nombre del campo foraneo de la tabla intermedia a id_usuario en lugar de usuarios_id por defecto
 		// inverseJoinColumns cambia el nombre del campo foraneo de la tabla intermedia a id_rol en lugar de roles_id por defecto
 		// uniqueConstraints hacemos una restriccion unica usando campos compuestos 

@@ -81,8 +81,7 @@ $ curl -X PUT \
 }'
 
 ----------------------------------
-[DELETE]	http://192.168.1.100:[PORT]/eliminar/101
-
+[DELETE]
 $ curl -X DELETE http://192.168.1.100:[PORT]/eliminar/100
 ```
 

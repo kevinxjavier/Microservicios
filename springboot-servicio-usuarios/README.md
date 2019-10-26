@@ -41,6 +41,12 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 $ curl http://192.168.1.100:[PORT]/usuariocrud
 $ curl http://192.168.1.100:[PORT]/usuariocrud/1
 
+$ curl http://localhost:8090/api/usuarios/usuariocrud/search/findByUsername?username=16870609
+
+$ curl http://localhost:8090/api/usuarios/usuariocrud/search/buscar-correo?correo=et.magnis@porttitor.co.uk
+
+$ curl http://localhost:8090/api/usuarios/usuariocrud/search/obtenerPorUsername?username=16870609
+
 ----------------------------------
 [POST]	http://localhost:8090/api/usuarios/usuariocrud
 Body | Raw | JSON
@@ -87,5 +93,7 @@ $ curl -X PUT \
 }'
 
 ----------------------------------
-[DELETE]	http://localhost:8090/api/usuarios/usuariocrud/102
+[DELETE]
+$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
+```
 
