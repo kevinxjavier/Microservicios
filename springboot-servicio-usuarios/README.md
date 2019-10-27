@@ -38,21 +38,21 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 # Go to
 ```
 [GET]
-$ curl http://192.168.1.100:[PORT]/usuariocrud
-$ curl http://192.168.1.100:[PORT]/usuariocrud/1
+$ curl http://localhost:[PORT]/usuariocrud
+$ curl http://localhost:[PORT]/usuariocrud/1
 
-$ curl http://localhost:8090/api/usuarios/usuariocrud/search/findByUsername?username=16870609
+$ curl http://localhost:[PORT]/usuariocrud/search/findByUsername?username=16870609
 
-$ curl http://localhost:8090/api/usuarios/usuariocrud/search/buscar-correo?correo=et.magnis@porttitor.co.uk
+$ curl http://localhost:[PORT]/usuariocrud/search/buscar-correo?correo=et.magnis@porttitor.co.uk
 
-$ curl http://localhost:8090/api/usuarios/usuariocrud/search/obtenerPorUsername?username=16870609
+$ curl http://localhost:[PORT]/usuariocrud/search/obtenerPorUsername?username=16870609
 
 ----------------------------------
-[POST]	http://localhost:8090/api/usuarios/usuariocrud
+[POST]	http://localhost:[PORT]/usuariocrud
 Body | Raw | JSON
 	
 $ curl -X POST \
-  http://localhost:8090/api/usuarios/usuariocrud \
+  http://localhost:[PORT]/usuariocrud \
   -H 'Content-Type: application/json' \
   -d '{
   "username": "kevinxjavier",
@@ -72,11 +72,11 @@ $ curl -X POST \
 }'
 
 ----------------------------------
-[PUT]	http://localhost:8090/api/usuarios/usuariocrud/101
+[PUT]	http://localhost:[PORT]/usuariocrud/101
 Body | Raw | JSON
 
 $ curl -X PUT \
-  http://localhost:8090/api/usuarios/usuariocrud/101 \
+  http://localhost:[PORT]/usuariocrud/101 \
   -H 'Content-Type: application/json' \
   -d '{
   "username": "kevinpina",
@@ -94,6 +94,5 @@ $ curl -X PUT \
 
 ----------------------------------
 [DELETE]
-$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
+$ curl -X DELETE http://localhost:[PORT]/usuariocrud/102
 ```
-

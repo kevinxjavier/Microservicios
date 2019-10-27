@@ -21,6 +21,61 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 ### Usuarios
 	[GET]
 	$ curl http://localhost:8090/api/usuarios/usuariocrud
+	
+	$ curl http://localhost:8090/api/usuarios/usuariocrud/search/findByUsername?username=16870609
+	
+	$ curl http://localhost:8090/api/usuarios/usuariocrud/search/buscar-correo?correo=et.magnis@porttitor.co.uk
+	
+	$ curl http://localhost:8090/api/usuarios/usuariocrud/search/obtenerPorUsername?username=16870609
+	
+	----------------------------------
+	[POST]	http://localhost:8090/api/usuarios/usuariocrud
+	Body | Raw | JSON
+		
+	$ curl -X POST \
+	  http://localhost:8090/api/usuarios/usuariocrud \
+	  -H 'Content-Type: application/json' \
+	  -d '{
+	  "username": "kevinxjavier",
+	  "password": "123456",
+	  "enabled": true,
+	  "nombre": "Kevin",
+	  "apellido": "Pina",
+	  "email": "kevin@kevinpina.com",
+	  "roles": [
+	    {
+	      "id": 1, "nombre": "ROLE_USER"
+	    },
+	    {
+	      "id": 2, "nombre": "ROLE_ADMIN"
+	    }
+	  ]
+	}'
+	
+	----------------------------------
+	[PUT]	http://localhost:8090/api/usuarios/usuariocrud/101
+	Body | Raw | JSON
+	
+	$ curl -X PUT \
+	  http://localhost:8090/api/usuarios/usuariocrud/101 \
+	  -H 'Content-Type: application/json' \
+	  -d '{
+	  "username": "kevinpina",
+	  "password": "123456",
+	  "enabled": true,
+	  "nombre": "Kevin J",
+	  "apellido": "Pina Calatrava",
+	  "email": "aufwacht@hotmail.com",
+	  "roles": [
+	    {
+	      "id": 1, "nombre": "ROLE_USER"
+	    }
+	  ]
+	}'
+	
+	----------------------------------
+	[DELETE]
+	$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
 
 ### Productos
 

@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 
-import com.kevinpina.springboot.usuarios.models.entity.Rol;
-import com.kevinpina.springboot.usuarios.models.entity.Usuario;
+import com.kevinpina.springboot.commons.usuarios.models.entity.Rol;
+import com.kevinpina.springboot.commons.usuarios.models.entity.Usuario;
 
 /**
  * 

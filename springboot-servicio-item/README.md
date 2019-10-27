@@ -24,11 +24,11 @@ $ curl http://localhost:8005/ver/1/cantidad/1
 $ curl http://localhost:8005/obtenet-config
 
 ----------------------------------
-[POST]	http://192.168.1.100:8005/crear
+[POST]	http://localhost:8005/crear
 Body | Raw | JSON
 
 $ curl -X POST \
-  http://192.168.1.100:8005/crear \
+  http://localhost:8005/crear \
   -H 'Content-Type: application/json' \
   -d '{
 	"id": null,
@@ -38,11 +38,11 @@ $ curl -X POST \
 }'
 
 ----------------------------------
-[PUT] 	http://192.168.1.100:8005/editar/101
+[PUT] 	http://localhost:8005/editar/101
 Body | Raw | JSON
 
 $ curl -X PUT \
-  http://192.168.1.100:8005/editar/101 \
+  http://localhost:8005/editar/101 \
   -H 'Content-Type: application/json' \
   -d '{
 	"id": null,
@@ -52,6 +52,6 @@ $ curl -X PUT \
 
 ----------------------------------
 [DELETE]
-$ curl -X DELETE http://192.168.1.100:8005/eliminar/103
+$ curl -X DELETE http://localhost:8005/eliminar/103
 ```
 

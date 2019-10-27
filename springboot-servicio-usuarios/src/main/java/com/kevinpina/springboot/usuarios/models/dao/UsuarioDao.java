@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import com.kevinpina.springboot.usuarios.models.entity.Usuario;
+import com.kevinpina.springboot.commons.usuarios.models.entity.Usuario;
 
 @RepositoryRestResource(path = "usuariocrud")	// Exporta el CRUD y los metodos personalizados que tengamos
 public interface UsuarioDao extends PagingAndSortingRepository<Usuario, Long>{
