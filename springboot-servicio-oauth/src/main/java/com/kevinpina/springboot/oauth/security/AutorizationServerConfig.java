@@ -25,26 +25,27 @@ public class AutorizationServerConfig extends AuthorizationServerConfigurerAdapt
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.tokenKeyAccess("permitAll()")		// Es el endpoint para autenticar el token [POST] /oauth/token
-			.checkTokenAccess("isAuthenticated()");	// Este endpoint se encarga de validar el token. 
-													// Ambos endpoint estan protegidos con Autenticacion HTTP Basic
-														// Header Authorization Basic: clientid y clientsecret 
+		// security es para dar seguridad a los tokens
+		security.tokenKeyAccess("permitAll()")					// Es el endpoint para autenticar el token [POST] /oauth/token con los username y password del ClienteApp y del Usuario
+			.checkTokenAccess("isAuthenticated()");				// Este endpoint se encarga de validar el token. 
+																// Ambos endpoint estan protegidos con Autenticacion HTTP Basic
+																	// Header Authorization Basic: clientid y clientsecret 
 	}
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("frontendapp")
-			.secret(passwordEncoder.encode("123456"))
-			.scopes("read", "write")
-			.authorizedGrantTypes("password", "refresh_token") // refresh_token  = Actualiza el token antes de caducar
-			.accessTokenValiditySeconds(3600)	// Validez del token 1 Hora
+		clients.inMemory().withClient("frontendapp")			// ClientID o ClienteApp
+			.secret(passwordEncoder.encode("123456"))			// PasswordApp o ClientSecret 
+			.scopes("read", "write")							// La aplicacion puede leer y escribir
+			.authorizedGrantTypes("password", "refresh_token")	// password = "Tipo de autenticacion para obtener el token a traves de username y password tanto del ClienteApp como del Usuario" | refresh_token  = Actualiza el token antes de caducar
+			.accessTokenValiditySeconds(3600)					// Validez del token 1 Hora
 			.refreshTokenValiditySeconds(3600)			
-//			.and()								// Asi colocamos mas usuarios de aplicacion
+//			.and()												// Asi colocamos mas usuarios de aplicacion
 //			.withClient("androidapp")
 //			.secret(passwordEncoder.encode("123456"))
 //			.scopes("read", "write")
-//			.authorizedGrantTypes("password", "refresh_token") // refresh_token  = Actualiza el token antes de caducar
-//			.accessTokenValiditySeconds(3600)	// Validez del token 1 Hora
+//			.authorizedGrantTypes("password", "refresh_token")	// refresh_token  = Actualiza el token antes de caducar
+//			.accessTokenValiditySeconds(3600)					// Validez del token 1 Hora
 //			.refreshTokenValiditySeconds(3600)
 			; 
 	}
