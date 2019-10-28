@@ -16,6 +16,9 @@ https://start.spring.io/starter.zip?name=springboot-servicio-zuul&groupId=com.ke
 - Config
 https://start.spring.io/starter.zip?name=springboot-servicio-config&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-config&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.config&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-config-server
 
+- OAuth2 (OAuth2 contiene a Spring Security)
+https://start.spring.io/starter.zip?name=springboot-servicio-oauth&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-oauth&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.oauth&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-eureka&dependencies=cloud-feign&dependencies=cloud-oauth2&dependencies=web
+
 - Commons (JPA, H2)
 https://start.spring.io/starter.zip?name=springboot-servicio-commons&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-commons&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.commons&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=data-jpa&dependencies=h2
 
@@ -42,19 +45,22 @@ Orden para ejecutar los proyectos
 03- springboot-servicio-eureka			[Eureka]
 	$ mvn spring-boot:run
 
-04- springboot-servicio-productos		[Service, H2, JPA]
+04- springboot-servicio-productos		[Service - H2 - JPA]
 	$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=8001
 	$ java -jar target/springboot-servicio-productos-0.0.1-SNAPSHOT.jar --server.port=9001
 	# OR
 	$ SERVER_PORT=8001 mvn spring-boot:run
 	$ SERVER_PORT=9001 mvn spring-boot:run
 	
-05- springboot-servicio-item			[RestTemplate - Feign - Ribbon - Hystrix]
+05- springboot-servicio-item			[Service - RestTemplate - Feign - Ribbon - Hystrix]
 	$ mvn spring-boot:run
 	
-06- springboot-servicio-usuarios		[Rest Repository]
+06- springboot-servicio-usuarios		[Service - Rest Repository]
 	$ mvn spring-boot:run
 
-07-	springboot-servicio-zuul			[Zuul]
+07- springboot-servicio-oauth			[Service - OAuth2 - Feign]
+	$ mvn spring-boot:run
+
+08-	springboot-servicio-zuul			[Zuul]
 	$ mvn spring-boot:run
 
