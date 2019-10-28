@@ -76,6 +76,24 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	----------------------------------
 	[DELETE]
 	$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
+	
+### OAuth
+	[POST]	http://localhost:8090/api/security/oauth/token
+	Authorization | Basic Auth 
+		Username: frontendapp 
+		Password: 12345
+
+		Preview Request | Headers | Temporary Headers
+	Body | x-www-form-urlencoded 
+		username: 	tarikxdale
+		password:	12345
+		grant_type:	password
+
+	$ curl -X POST \
+	  http://localhost:8090/api/security/oauth/token \
+	  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2' \
+	  -H 'Content-Type: application/x-www-form-urlencoded' \
+	  -d 'username=tarikxdale&password=12345&grant_type=password'
 
 ### Productos
 
