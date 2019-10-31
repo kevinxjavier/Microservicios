@@ -22,7 +22,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/api/security/oauth/**")	// Aplica la autenticacion a cualquier metodo POST, GET ...
-		.permitAll()	// De esta forma hacemos publica la ruta cualquier usuario puede iniciar session
+			.permitAll()	// De esta forma hacemos publica la ruta cualquier usuario puede iniciar session
 		
 		.antMatchers(HttpMethod.GET, "/api/productos/listar", "/api/items/listar", "/api/usuarios/usuariocrud")
 			.permitAll()	// Haciendo estas rutas publicas, no se necesitan ROLES_ 
