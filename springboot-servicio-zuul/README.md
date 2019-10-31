@@ -94,7 +94,16 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2' \
 	  -H 'Content-Type: application/x-www-form-urlencoded' \
 	  -d 'username=tarikxdale&password=12345&grant_type=password'
-
+	  
+### ZUUL empleando OAuth
+	[POST - PUT - DELETE]	http://localhost:8090/api/productos/ver/2		[Ver Ruta en: ResourceServerConfig.java]
+	Authorization | Bearer Token
+		Token: <COLOCAMOS _EL_TOKEN_GENERADO_CON_http://localhost:8090/api/security/oauth/token>
+		
+	$ curl -X GET \
+	  http://192.168.1.100:8090/api/usuarios/usuariocrud/2 \
+	  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ0YXJpa3hkYWxlIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiRGFsZSIsImNvcnJlbyI6ImV0Lm1hZ25pc0Bwb3J0dGl0b3IuY28udWsiLCJleHAiOjE1NzI0ODg3NDksIm5vbWJyZSI6IlRhcmlrIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjgxNWQ4N2ZlLTBmYWEtNGQ5Yi1iMGQwLWNjZjQzNGU5ODY3MyIsImNsaWVudF9pZCI6ImZyb250ZW5kYXBwIn0.LG9li2v4Bi6pYTxmmz5uOOryHC1tCN-T6AK4GnyvsUI'
+		
 ### Productos
 
 	[GET]
