@@ -12,6 +12,7 @@ https://start.spring.io/starter.zip?name=springboot-servicio-eureka&groupId=com.
 
 - Zuul
 https://start.spring.io/starter.zip?name=springboot-servicio-zuul&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-zuul&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.zuul&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-eureka&dependencies=cloud-zuul&dependencies=web
+	Se agrego luego: &dependencies=cloud-oauth2
 
 - Config
 https://start.spring.io/starter.zip?name=springboot-servicio-config&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-config&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.config&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-config-server

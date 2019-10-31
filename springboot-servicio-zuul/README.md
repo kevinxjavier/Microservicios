@@ -81,7 +81,7 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	[POST]	http://localhost:8090/api/security/oauth/token
 	Authorization | Basic Auth 
 		Username: frontendapp 
-		Password: 12345
+		Password: 123456
 
 		Preview Request | Headers | Temporary Headers
 	Body | x-www-form-urlencoded 
@@ -140,11 +140,11 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	$ curl http://localhost:8090/api/items/obtener-config
 
 	----------------------------------
-	[POST]	http://192.168.1.100:8090/api/productos/crear
+	[POST]	http://192.168.1.100:8090/api/items/crear
 	Body | Raw | JSON
 
 	$ curl -X POST \
-	  http://192.168.1.100:8090/api/productos/crear \
+	  http://192.168.1.100:8090/api/items/crear \
 	  -H 'Content-Type: application/json' \
 	  -d '{
 		"id": null,
@@ -154,11 +154,11 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	}'
 
 	----------------------------------
-	[PUT] 	http://192.168.1.100:8090/api/productos/editar/101
+	[PUT] 	http://192.168.1.100:8090/api/items/editar/101
 	Body | Raw | JSON
 
 	$ curl -X PUT \
-	  http://192.168.1.100:8090/api/productos/editar/101 \
+	  http://192.168.1.100:8090/api/items/editar/101 \
 	  -H 'Content-Type: application/json' \
 	  -d '{
 		"id": null,
@@ -167,8 +167,8 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	}'
 
 	----------------------------------
-	[DELETE]	http://192.168.1.100:8090/api/productos/eliminar/103
+	[DELETE]	http://192.168.1.100:8090/api/items/eliminar/103
 
-	$ curl -X DELETE http://192.168.1.100:8090/api/productos/eliminar/103
+	$ curl -X DELETE http://192.168.1.100:8090/api/items/eliminar/103
 ```
 

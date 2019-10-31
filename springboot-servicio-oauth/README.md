@@ -15,7 +15,7 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 [POST]	ttp://localhost:9100/oauth/token
 Authorization | Basic Auth 
 	Username: frontendapp 
-	Password: 12345
+	Password: 123456
 
 	Preview Request | Headers | Temporary Headers
 Body | x-www-form-urlencoded 
