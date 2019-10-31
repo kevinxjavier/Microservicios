@@ -24,7 +24,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/api/security/oauth/**")	// Aplica la autenticacion a cualquier metodo POST, GET ...
 		.permitAll()	// De esta forma hacemos publica la ruta cualquier usuario puede iniciar session
 		
-		.antMatchers(HttpMethod.GET, "/api/productos/listar", "/api/items/listar", "/api/usuarios/usuariocrud").permitAll()	// Haciendo estas rutas publicas, no se necesitan ROLES_ 
+		.antMatchers(HttpMethod.GET, "/api/productos/listar", "/api/items/listar", "/api/usuarios/usuariocrud")
+			.permitAll()	// Haciendo estas rutas publicas, no se necesitan ROLES_ 
 		
 		.antMatchers(HttpMethod.GET, "/api/productos/ver/{id}", "/api/items/ver/{id}/cantidad/{cantidad}", "/api/usuarios/usuariocrud/{id}")
 			.hasAnyRole("ADMIN", "USER")	// Para los Roles no se coloca el prefijo ROLE_ ya que se inserta automaticamente
