@@ -12,13 +12,14 @@ https://start.spring.io/starter.zip?name=springboot-servicio-eureka&groupId=com.
 
 - Zuul
 https://start.spring.io/starter.zip?name=springboot-servicio-zuul&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-zuul&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.zuul&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-eureka&dependencies=cloud-zuul&dependencies=web
-	Se agrego luego: &dependencies=cloud-oauth2
+	Se agrego luego: &dependencies=cloud-oauth2&dependencies=cloud-config-client
 
 - Config
 https://start.spring.io/starter.zip?name=springboot-servicio-config&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-config&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.config&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-config-server
 
 - OAuth2 (OAuth2 contiene a Spring Security)
 https://start.spring.io/starter.zip?name=springboot-servicio-oauth&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-oauth&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.oauth&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-eureka&dependencies=cloud-feign&dependencies=cloud-oauth2&dependencies=web
+	Se agrego luego: &dependencies=cloud-config-client
 
 - Commons (JPA, H2)
 https://start.spring.io/starter.zip?name=springboot-servicio-commons&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-commons&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.commons&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=data-jpa&dependencies=h2

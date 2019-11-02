@@ -1,5 +1,7 @@
 package com.kevinpina.springboot.zuul.oauth;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,9 +12,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+@RefreshScope			// Colocamos esta anotacion para que funcione la URL de refrescamiento de parametros de Spring Cloud Config
 @Configuration
 @EnableResourceServer	// Habilitando la configuracion del Servidor de Recursos
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+	
+	@Value("${config.security.oauth.jwt.key}")
+	private String jwtKey;
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -49,7 +55,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter token = new JwtAccessTokenConverter();
-		token.setSigningKey("MI_CLAVE_SECRETA");
+		token.setSigningKey(jwtKey);
 		return token;
 	}
 
