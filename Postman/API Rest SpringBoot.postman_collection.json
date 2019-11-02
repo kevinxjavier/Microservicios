@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "b17c871f-c711-480e-9951-0acd3bddf271",
+		"name": "API Rest SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzI2NzUxNzgsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI5NjdlMmEzMS03ZWRlLTQxZmItODZmNi1jMTg2NWIzZWUwYjkiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.uxlB2bNC7tQv4F3b9KGzi_HiB4hrC_vtpJC3OSt-INI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.100:8090/api/usuarios/usuariocrud/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"100"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "frontendapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZXZpbnhqYXZpZXIiLCJhcGVsbGlkbyI6InBpw7FhIiwic3VlbGRvIjoiMTUwNDUiLCJSb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9NT0RFUkFUT1IifSx7ImF1dGhvcml0eSI6IlJPTEVfU1RBRkYifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiZXhwIjoxNTcyMzYwNzg1LCJub21icmUiOiJrZXZpbiIsImlhdCI6MTU3MjMyNDc4NX0.JDy0Uj7OWNmGFa-UzkLfGjeHEbwHwwPyZk3C4asF-0A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "irenexpatrick",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/security/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"security",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
