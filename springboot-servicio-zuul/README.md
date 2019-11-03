@@ -78,6 +78,8 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
 	
 ### OAuth
+
+	- Generar Token	
 	[POST]	http://localhost:8090/api/security/oauth/token
 	Authorization | Basic Auth 
 		Username: frontendapp 
@@ -94,6 +96,23 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2' \
 	  -H 'Content-Type: application/x-www-form-urlencoded' \
 	  -d 'username=tarikxdale&password=12345&grant_type=password'
+	  
+  - Refrescar Token
+	[POST]	http://localhost:8090/api/security/oauth/token
+	Authorization | Basic Auth 
+		Username: frontendapp 
+		Password: 123456
+
+		Preview Request | Headers | Temporary Headers
+  	Body | x-www-form-urlencoded 
+		grant_type:	password
+		refresh_token: <COLOCAR_EL_TOKEN_refresh_token_QUE_SE_OBTIENE_DE_- Generar Token>
+
+	$ curl -X POST \
+	  http://localhost:8090/api/security/oauth/token \
+	  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU=' \
+	  -H 'Content-Type: application/x-www-form-urlencoded' \
+	  -d 'grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJhdGkiOiJlNDIwZGRhZi0zZjQxLTRmYWYtYTEyMS01MzUxOWYzZDQyYzYiLCJleHAiOjE1NzI4MjEzMTgsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiIxNGQwZGI5My0wNDQ0LTQ5NWUtYTQ0ZC02NDZmOTlhNmJmZDciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.L74HWt__zjvAP499sS3UC6eR42vT72QGtymEzoJRCok'
 	  
 ### ZUUL empleando OAuth
 	[POST - PUT - DELETE]	http://localhost:8090/api/productos/ver/2		[Ver Ruta en: ResourceServerConfig.java]
