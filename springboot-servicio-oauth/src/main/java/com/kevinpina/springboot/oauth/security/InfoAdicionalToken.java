@@ -16,6 +16,7 @@ import com.kevinpina.springboot.oauth.services.IUsuarioService;
 
 /**
  * Clase para agregar Informacion Adicional o Claims al Token 
+ * se usa en la clase AutorizationServerConfig
  */
 @Component
 public class InfoAdicionalToken implements TokenEnhancer {
