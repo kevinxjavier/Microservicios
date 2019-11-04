@@ -35,6 +35,7 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 		
 		if (usuario.getIntentos() != null && usuario.getIntentos() > 0) {
 			usuario.setIntentos(0);
+			usuarioService.update(usuario, usuario.getId());
 		}
 	}
 
