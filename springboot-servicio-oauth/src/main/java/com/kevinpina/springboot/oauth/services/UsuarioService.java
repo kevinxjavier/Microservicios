@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import com.kevinpina.springboot.commons.usuarios.models.entity.Usuario;
 import com.kevinpina.springboot.oauth.clientes.UsuarioFeignCliente;
 
+import feign.FeignException;
+
 @Service
 public class UsuarioService implements UserDetailsService, IUsuarioService {
 	
@@ -27,22 +29,25 @@ public class UsuarioService implements UserDetailsService, IUsuarioService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Usuario usuario = usuarioFeignCliente.findByUsername(username);
 		
-		if (usuario == null) {
+		try {
+		
+			Usuario usuario = usuarioFeignCliente.findByUsername(username);
+			
+			List<GrantedAuthority> authorities = usuario.getRoles()
+					.stream()
+					.map(role -> new SimpleGrantedAuthority(role.getNombre()))
+					.peek(authority -> log.info("Role: " + authority.getAuthority()))
+					.collect(Collectors.toList());
+			
+			log.info("Usuario autenticado: " + username);
+			
+			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
+			
+		} catch (FeignException e) {
 			log.error("No se encontro el Usuario '" + username + "' en el Sistema");
 			throw new UsernameNotFoundException("No se encontro el Usuario '" + username + "' en el Sistema");
 		}
-		
-		List<GrantedAuthority> authorities = usuario.getRoles()
-				.stream()
-				.map(role -> new SimpleGrantedAuthority(role.getNombre()))
-				.peek(authority -> log.info("Role: " + authority.getAuthority()))
-				.collect(Collectors.toList());
-		
-		log.info("Usuario autenticado: " + username);
-		
-		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 	}
 
 	@Override
