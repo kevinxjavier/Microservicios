@@ -46,6 +46,8 @@ public class Usuario implements Serializable {
 		// inverseJoinColumns cambia el nombre del campo foraneo de la tabla intermedia a id_rol en lugar de roles_id por defecto
 		// uniqueConstraints hacemos una restriccion unica usando campos compuestos 
 	private List<Rol> roles;
+	
+	private Integer intentos;
 
 	public Long getId() {
 		return id;
@@ -109,6 +111,14 @@ public class Usuario implements Serializable {
 
 	public void setRoles(List<Rol> roles) {
 		this.roles = roles;
+	}
+
+	public Integer getIntentos() {
+		return intentos;
+	}
+
+	public void setIntentos(Integer intentos) {
+		this.intentos = intentos;
 	}
 
 }
