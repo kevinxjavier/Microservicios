@@ -51,9 +51,9 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 				usuario.setIntentos(0);
 			}
 			
-			log.info("Intento actual es de:", usuario.getIntentos());
+			log.info("Intento actual es de:" + usuario.getIntentos());
 			usuario.setIntentos(usuario.getIntentos() + 1);
-			log.info("Intentos despues es de:", usuario.getIntentos());
+			log.info("Intentos despues es de:" + usuario.getIntentos());
 			
 			if(usuario.getIntentos() >= 3) {
 				log.error(String.format("Usuario %s deshabilitado por maximos intentos.", usuario.getUsername()));
