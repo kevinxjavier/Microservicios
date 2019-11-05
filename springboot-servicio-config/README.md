@@ -1,3 +1,11 @@
+# Init 
+Se debe configurar un Repo GIT puede ser local o remoto
+
+## Repositorio Git Local
+spring.cloud.config.server.git.uri=file:///home/kevin/Documentos/workspace-spring-tool-suite-4-4.4.0.RELEASE/Microservicios
+## Repositorio Git Remoto
+spring.cloud.config.server.git.uri=https://github.com/kevinxjavier/Microservicios
+
 # Run
 
 ```
