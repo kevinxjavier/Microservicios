@@ -30,6 +30,7 @@ Se puede ejecutar sin haber ejecutado Eureka, Zuul y servicios SpringBoots.
 
 Este Microservicio levanta la configuracion en la Nube (GIT, SVN, HashiCorp Vault) para los 
 otros microservicios descritos en el Repo con la nomenclatura [NOMBRE-SERVICIO].properties
+que en este caso para fines practicos se colocaron en la raiz Microservios/*.properties
 
 Si el server.port esta definido en el application.properties de un servicio SpringBoot y el
 servicio Spring Cloud Config tambien define el server.port predomina la configuracion de 
