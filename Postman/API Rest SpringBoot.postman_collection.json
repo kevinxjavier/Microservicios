@@ -13,7 +13,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzI2NzUxNzgsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI5NjdlMmEzMS03ZWRlLTQxZmItODZmNi1jMTg2NWIzZWUwYjkiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.uxlB2bNC7tQv4F3b9KGzi_HiB4hrC_vtpJC3OSt-INI",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzI4MjEzMTgsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJlNDIwZGRhZi0zZjQxLTRmYWYtYTEyMS01MzUxOWYzZDQyYzYiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.qV9vifukqPDd3bDne9daJ7zxqyBj_3Sei8iOdrr8qrI",
 							"type": "string"
 						}
 					]
@@ -89,7 +89,7 @@
 						},
 						{
 							"key": "password",
-							"value": "12345",
+							"value": "123456",
 							"type": "text"
 						},
 						{
@@ -103,6 +103,65 @@
 							"language": "json"
 						}
 					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/security/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"security",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "frontendapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJhdGkiOiJlNDIwZGRhZi0zZjQxLTRmYWYtYTEyMS01MzUxOWYzZDQyYzYiLCJleHAiOjE1NzI4MjEzMTgsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiIxNGQwZGI5My0wNDQ0LTQ5NWUtYTQ0ZC02NDZmOTlhNmJmZDciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.L74HWt__zjvAP499sS3UC6eR42vT72QGtymEzoJRCok",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8090/api/security/oauth/token",
