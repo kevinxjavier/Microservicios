@@ -3,6 +3,7 @@
 ```
 - Web - Devtools - JPA - H2
 https://start.spring.io/starter.zip?name=springboot-servicio-productos-1&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-productos-1&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot+Properties&packageName=com.kevinpina.springboot.productos&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=h2&dependencies=data-jpa&dependencies=web
+	Se agrego lurgo: &dependencies=mysql
 
 - Web - Feign - Ribbon
 https://start.spring.io/starter.zip?name=springboot-servicio-item&groupId=com.kevinpina.springboot&artifactId=springboot-servicio-item&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.item&type=maven-project&packaging=jar&javaVersion=1.8&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=cloud-feign&dependencies=cloud-ribbon&dependencies=web
