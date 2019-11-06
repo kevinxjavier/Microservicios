@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Usuario Listar",
+			"name": "Producto Listar",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -16,7 +16,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzI5MjYxMjYsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJlNmIxNjU5My03NzFmLTQxZWYtYjIzYS1kNGNmZDkwZjRiMDYiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.a3Z8kJdlbZYZFXiG_NAYj8MIlzH4viWdIrBrRQ_8PWc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
 							"type": "string"
 						}
 					]
@@ -40,13 +40,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.1.100:8090/api/productos/listar",
+					"raw": "http://localhost:8090/api/productos/listar",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"100"
+						"localhost"
 					],
 					"port": "8090",
 					"path": [
@@ -192,7 +189,7 @@
 			"response": []
 		},
 		{
-			"name": "Usuario Crear",
+			"name": "Producto Crear",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -223,13 +220,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.1.100:8090/api/productos/crear",
+					"raw": "http://localhost:8090/api/productos/crear",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"100"
+						"localhost"
 					],
 					"port": "8090",
 					"path": [
@@ -242,14 +236,14 @@
 			"response": []
 		},
 		{
-			"name": "Usuario Ver",
+			"name": "Producto Ver",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzI5MjYxMjYsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJlNmIxNjU5My03NzFmLTQxZWYtYjIzYS1kNGNmZDkwZjRiMDYiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.a3Z8kJdlbZYZFXiG_NAYj8MIlzH4viWdIrBrRQ_8PWc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
 							"type": "string"
 						}
 					]
@@ -257,27 +251,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.100:8090/api/productos/ver/105",
+					"raw": "http://localhost:8090/api/productos/ver/100",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"100"
+						"localhost"
 					],
 					"port": "8090",
 					"path": [
 						"api",
 						"productos",
 						"ver",
-						"105"
+						"100"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Usuario Editar",
+			"name": "Producto Editar",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -294,8 +285,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -308,13 +299,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.1.100:8090/api/productos/editar/105",
+					"raw": "http://localhost:8090/api/productos/editar/105",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"100"
+						"localhost"
 					],
 					"port": "8090",
 					"path": [
@@ -328,7 +316,7 @@
 			"response": []
 		},
 		{
-			"name": "Usuario Eliminar",
+			"name": "Producto Eliminar",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -345,8 +333,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -359,13 +347,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.1.100:8090/api/productos/eliminar/104",
+					"raw": "http://localhost:8090/api/productos/eliminar/104",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"100"
+						"localhost"
 					],
 					"port": "8090",
 					"path": [
@@ -373,6 +358,241 @@
 						"productos",
 						"eliminar",
 						"104"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Kevin Phone\",\n    \"precio\": 46\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Ver",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Kevin Phone\",\n    \"precio\": 46\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kevinxjavier\",\n  \"password\": \"$2a$10$fCq6TT3Tz6Jyc9GPaJQMOe9sh9CsBxlGr48Tz8jw6/Z2T.OgSZ1A.\",\n  \"enabled\": true,\n  \"nombre\": \"Kevin\",\n  \"apellido\": \"Piña\",\n  \"email\": \"kevin@kevin.cx\",\n  \"roles\": [],\n  \"intentos\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Eliminar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario Editar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kevinxcasandra\",\n  \"password\": \"$2a$10$fCq6TT3Tz6Jyc9GPaJQMOe9sh9CsBxlGr48Tz8jw6/Z2T.OgSZ1A.\",\n  \"enabled\": true,\n  \"nombre\": \"Kevin\",\n  \"apellido\": \"Piña Casandra\",\n  \"email\": \"kevin@kevin.cx\",\n  \"roles\": [],\n  \"intentos\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"usuarios",
+						"usuariocrud",
+						"11"
 					]
 				}
 			},
