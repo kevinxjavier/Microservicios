@@ -30,6 +30,8 @@ https://start.spring.io/starter.zip?name=springboot-servicio-commons-usuarios&gr
 
 - Rest Repository
 https://start.spring.io/starter.zip?name=springboot-servicio.usuarios&groupId=com.kevinpina.springboot&artifactId=springboot-servicio.usuarios&version=0.0.1-SNAPSHOT&description=Demo+project+for+Spring+Boot&packageName=com.kevinpina.springboot.usuarios&type=maven-project&packaging=jar&javaVersion=11&language=java&bootVersion=2.2.0.RELEASE&dependencies=devtools&dependencies=data-rest&dependencies=data-jpa&dependencies=h2&dependencies=cloud-eureka&dependencies=web
+	Se agrego luego: &dependencies=cloud-config-client
+
 ```
 
 # Run
