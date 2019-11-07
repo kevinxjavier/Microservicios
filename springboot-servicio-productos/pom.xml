@@ -96,7 +96,9 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Hoxton.M3</version>
+				<version>Hoxton.M1</version>
+<!-- 				Se comenta Hoxton.M3 porque da problemas cuando se usa con Zipkin -->
+<!-- 				<version>Hoxton.M3</version> -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
