@@ -12,21 +12,26 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 
 ```
 ----------------------------------
-[POST]	ttp://localhost:9100/oauth/token
-Authorization | Basic Auth 
-	Username: frontendapp 
-	Password: 123456
+Nota: "Basic Auth" Genera en los Headers un parametro -H Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2 que es
+	el usuario:password encriptado en base64.
 
-	Preview Request | Headers | Temporary Headers
-Body | x-www-form-urlencoded 
-	username: 	tarikxdale
-	password:	12345
-	grant_type:	password
+	$ echo "ZnJvbnRlbmRhcHA6MTIzNDU2" | base64 --decode
+		frontendapp:123456
 
-$ curl -X POST \
-  http://localhost:9100/oauth/token \
-  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'username=tarikxdale&password=12345&grant_type=password'
+[POST]	http://localhost:9100/oauth/token
+	Authorization | Basic Auth 
+		Username: frontendapp 
+		Password: 123456
+	
+		Preview Request | Headers | Temporary Headers
+	Body | x-www-form-urlencoded 
+		username: 	tarikxdale
+		password:	12345
+		grant_type:	password
+	
+	$ curl -X POST \
+	  http://localhost:9100/oauth/token \
+	  -H 'Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2' \
+	  -H 'Content-Type: application/x-www-form-urlencoded' \
+	  -d 'username=tarikxdale&password=12345&grant_type=password'
 ```
-

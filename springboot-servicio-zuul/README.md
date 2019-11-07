@@ -78,6 +78,11 @@ $ curl -X POST http://localhost:8090/api/items/actuator/refresh
 	$ curl -X DELETE http://localhost:8090/api/usuarios/usuariocrud/102
 	
 ### OAuth
+	Nota: "Basic Auth" Genera en los Headers un parametro -H Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU2 que es
+		el usuario:password encriptado en base64.
+
+		$ echo "ZnJvbnRlbmRhcHA6MTIzNDU2" | base64 --decode
+			frontendapp:123456
 
 	- Generar Token	
 	[POST]	http://localhost:8090/api/security/oauth/token
