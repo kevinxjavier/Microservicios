@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import com.kevinpina.springboot.commons.usuarios.models.entity.Usuario;
 import com.kevinpina.springboot.oauth.clientes.UsuarioFeignCliente;
 
+import brave.Tracer;
 import feign.FeignException;
 
 @Service
@@ -26,6 +27,10 @@ public class UsuarioService implements UserDetailsService, IUsuarioService {
 
 	@Autowired
 	private UsuarioFeignCliente usuarioFeignCliente;
+	
+	// Lo usamos para agregar un Tag a las traza de Sleuth Zipkin
+	@Autowired
+	private Tracer tracer;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -45,8 +50,13 @@ public class UsuarioService implements UserDetailsService, IUsuarioService {
 			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 			
 		} catch (FeignException e) {
-			log.error("No se encontro el Usuario '" + username + "' en el Sistema");
-			throw new UsernameNotFoundException("No se encontro el Usuario '" + username + "' en el Sistema");
+			String errorMessage = "No se encontro el Usuario '" + username + "' en el Sistema";
+			
+			log.error(errorMessage);			
+			
+			tracer.currentSpan().tag("error.mensaje", errorMessage + ": " + e.getMessage());
+			
+			throw new UsernameNotFoundException(errorMessage);
 		}
 	}
 

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.kevinpina.springboot.commons.usuarios.models.entity.Usuario;
 import com.kevinpina.springboot.oauth.services.IUsuarioService;
 
+import brave.Tracer;
 import feign.FeignException;
 
 /**
@@ -25,6 +26,10 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 	
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	// Lo usamos para agregar un Tag a las traza de Sleuth Zipkin
+	@Autowired
+	private Tracer tracer;
 
 	@Override
 	public void publishAuthenticationSuccess(Authentication authentication) {
@@ -41,10 +46,15 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 
 	@Override
 	public void publishAuthenticationFailure(AuthenticationException exception, Authentication authentication) {
-		log.error("Error: " + exception.getMessage());
+		String errorMessage = "Error: " + exception.getMessage();
+		log.error(errorMessage);
 		
 		// Se usa try-catch porque pudiera no existir usuario lo que nos devolveria un codigo 404
 		try {
+			
+			StringBuilder errors = new StringBuilder();
+			errors.append(errorMessage);
+			
 			Usuario usuario = usuarioService.findByUsername(authentication.getName());
 			
 			if (usuario.getIntentos() == null) {
@@ -55,10 +65,18 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 			usuario.setIntentos(usuario.getIntentos() + 1);
 			log.info("Intentos despues es de:" + usuario.getIntentos());
 			
+			errors.append(" - Intentos de login:" + usuario.getIntentos());
+			
 			if(usuario.getIntentos() >= 3) {
-				log.error(String.format("Usuario %s deshabilitado por maximos intentos.", usuario.getUsername()));
+				String errorMaximosIntentos = String.format("Usuario %s deshabilitado por maximos intentos.", usuario.getUsername());
+				
+				log.error(errorMaximosIntentos);
+				errors.append(" - " + errorMaximosIntentos);
+				
 				usuario.setEnabled(false);
 			}
+			
+			tracer.currentSpan().tag("error.mensaje", errors.toString());
 			
 			usuarioService.update(usuario, usuario.getId());
 		} catch(FeignException e) {
