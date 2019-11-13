@@ -40,6 +40,10 @@ https://start.spring.io/starter.zip?name=springboot-servicio.usuarios&groupId=co
 
 ```
 
+# Init
+	Crear el usuario, schema y cargar los scripts de schema_zipkin.sql en MySQL.
+	Luego de levantar MySQL levantar RabbitMQ y por ultimo Zipkin.
+
 # Start RabbitMQ
 ```
 	$ sudo rabbitmq-server start
