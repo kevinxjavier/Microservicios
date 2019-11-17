@@ -19,10 +19,11 @@ $ java -jar target/*-0.0.1-SNAPSHOT.jar
 # Go to
 
 ```
-$ curl http://localhost:8888/servicio-items/default
+$ curl http://localhost:8888/servicio-items/default	   
 $ curl http://localhost:8888/servicio-items/dev
 $ curl http://localhost:8888/servicio-items/prod
-
+$ curl http://localhost:8888/servicio-productos/default
+$ curl http://localhost:8888/servicio-productos/dev
 ```
 
 # Nota 
@@ -35,3 +36,13 @@ que en este caso para fines practicos se colocaron en la raiz Microservios/*.pro
 Si el server.port esta definido en el application.properties de un servicio SpringBoot y el
 servicio Spring Cloud Config tambien define el server.port predomina la configuracion de 
 servicio Spring Cloud Config sobreescribiendo la configuracion del servicio SpringBoot.
+
+# Docker
+
+```
+	$ sudo docker build -t config-server:v1 .
+	$ sudo docker run -p 8888:8888 --name config-server --network springcloud config-server:v1
+	$ curl http://localhost:8888/servicio-items/default 
+```
+
+
