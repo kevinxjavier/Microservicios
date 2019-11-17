@@ -8,6 +8,7 @@
 ```
 	## springboot-servicio-config
 		$ cd springboot-servicio-config
+		$ mvn clean compile package
 		$ sudo docker build -t config-server:v1 .
 		$ sudo docker run -p 8888:8888 --name config-server --network springcloud config-server:v1
 	
