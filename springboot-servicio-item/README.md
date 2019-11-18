@@ -52,3 +52,16 @@ Body | Raw | JSON
 [DELETE]
 	$ curl -X DELETE http://localhost:8005/eliminar/103
 ```
+
+# Docker
+
+```
+	$ mvn clean compile package -DskipTests
+	$ sudo docker build -t servicio-item:v1 .
+	$ sudo docker run -p 8002:8002 -p 8005:8005 -p 8007:8007 --network springcloud servicio-item:v1		# Se habilitan esos puertos por los posibles profiles a usar de Spring Config de servicio-items-[default, dev, prod].properties
+	
+	$ curl http://localhost:8005/listar
+	
+	# Ver Zuul README endpoints 
+	$ curl http://localhost:8090/api/items/listar
+```

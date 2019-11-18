@@ -89,5 +89,12 @@ Body | Raw | JSON
 	# sudo docker run -P --name servicio-productos --network springcloud servicio-productos:v1
 	$ sudo docker run -P --network springcloud servicio-productos:v1	# Con -P disponibiliza los puertos aleatorios, no es necesario --name ya que no necesitariamos el nombre.
 
-	$ curl http://localhost
+	$ sudo docker run -P --network springcloud servicio-productos:v1	# Podemos ejecutarlo varias veces mas sin problema ya que el puerto es dinamico y Eureka Balancea automaticamente.
+	
+	$ sudo docker exec -it [ID_CONTAINER] bash
+		$ cat /etc/hosts	# Aca se averigua la IP, el puerto con el servicio Eureka: posicionando el Mouse sobre el link.
+	$ curl http://172.18.0.6:40933/listar
+	
+	# Ver Zuul README endpoints
+	$ curl http://localhost:8090/api/productos/listar
 ```

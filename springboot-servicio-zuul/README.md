@@ -202,3 +202,15 @@
 	$ curl -X DELETE http://192.168.1.100:8090/api/items/eliminar/103
 ```
 
+# Docker
+
+```
+	$ mvn clean compile package -DskipTests
+	$ sudo docker build -t zuul-server:v1 .
+	$ sudo docker run -p 8090:8090 --network springcloud zuul-server:v1
+		
+	# Ver Zuul README endpoints
+	$ curl http://localhost:8090/api/productos/listar
+	$ curl http://localhost:8090/api/usuarios/usuariocrud 
+	$ curl http://localhost:8090/api/security/oauth/token
+```

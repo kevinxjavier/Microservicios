@@ -365,16 +365,13 @@
 		},
 		{
 			"name": "Usuario Listar",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzMwMjA0ODMsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmYjQxNWExNC1kODkzLTQ5NjAtYWYyNi0yMTBmMmQ2NjJlNzciLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.NAmhGrOL_JN3Sitm_hKi7V5ssWNaxWWDFyrXNGxDuMY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJpcmVuZXhwYXRyaWNrIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiUGF0cmljayIsImNvcnJlbyI6ImF0QG1hdXJpcy5jb20iLCJleHAiOjE1NzQwNTA5NjcsIm5vbWJyZSI6IklyZW5lIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJmMTlkOGM1NS1iMDZlLTQzZTQtYmQzOS1hOTZiMWE5MTViNDIiLCJjbGllbnRfaWQiOiJmcm9udGVuZGFwcCJ9.fngVkeNRcLQH5yKPlCd4qtCHYg9i7VFGWCAtsk0bqQM",
 							"type": "string"
 						}
 					]
@@ -388,17 +385,8 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nombre\": \"Kevin Phone\",\n    \"precio\": 46\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8090/api/usuarios/usuariocrud",
+					"raw": "http://localhost:8090/api/usuarios/usuariocrud/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -407,7 +395,8 @@
 					"path": [
 						"api",
 						"usuarios",
-						"usuariocrud"
+						"usuariocrud",
+						"1"
 					]
 				}
 			},

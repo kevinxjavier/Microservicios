@@ -95,3 +95,21 @@ Body | Raw | JSON
 [DELETE]
 	$ curl -X DELETE http://localhost:[PORT]/usuariocrud/102
 ```
+
+# Docker
+
+```
+	$ mvn clean compile package	# Evitando los Tests: $ mvn clean compile package -DskipTests
+	$ sudo docker build -t servicio-usuarios:v1 .
+	# sudo docker run -P --name servicio-usuarios --network springcloud servicio-usuarios
+	$ sudo docker run -P --network springcloud servicio-usuarios:v1		# Con -P disponibiliza los puertos aleatorios, no es necesario --name ya que no necesitariamos el nombre.
+
+	$ sudo docker run -P --network springcloud servicio-usuarios:v1		# Podemos ejecutarlo varias veces mas sin problema ya que el puerto es dinamico y Eureka Balancea automaticamente.
+	
+	$ sudo docker exec -it [ID_CONTAINER] bash
+		$ cat /etc/hosts	# Aca se averigua la IP, el puerto con el servicio Eureka: posicionando el Mouse sobre el link.
+	$ curl http://172.18.0.8:34811/usuariocrud
+		
+	# Ver Zuul README endpoints
+	$ curl http://localhost:8090/api/usuarios/usuariocrud
+```

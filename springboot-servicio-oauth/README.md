@@ -33,3 +33,16 @@ Nota: "Basic Auth" Genera en los Headers un parametro -H Authorization: Basic Zn
 	  -H 'Content-Type: application/x-www-form-urlencoded' \
 	  -d 'username=tarikxdale&password=12345&grant_type=password'
 ```
+
+# Docker
+
+```
+	$ mvn clean compile package -DskipTests
+	$ sudo docker build -t servicio-oauth:v1 .
+	$ sudo docker run -p 9100:9100 --network springcloud servicio-oauth:v1
+	
+	$ curl http://localhost:9100/oauth/token	# Usar Postman para agregar autenticacion
+
+	# Ver Zuul README endpoints 
+	$ curl http://localhost:8090/api/security/oauth/token
+```
