@@ -53,5 +53,3 @@
 	$ curl http://localhost:8888/servicio-productos/default
 	$ curl http://localhost:8888/servicio-productos/dev
 ```
-
-

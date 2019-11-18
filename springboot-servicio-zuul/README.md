@@ -1,22 +1,19 @@
 # Run
 
 ```
-$ mvn spring-boot:run
-```
-Or
-```
-$ java -jar target/*-0.0.1-SNAPSHOT.jar
+	$ mvn spring-boot:run
+	Or
+	$ java -jar target/*-0.0.1-SNAPSHOT.jar
 ```
 
 # Go to
 
 ```
-
-# Para refrescar los @Componentes que tengan @RefreshScope. Se invoca manualmente esta URL cuado se cambien datos en Spring Cloud Config
-# de esta manera no es necesario Reiniciar el Servicio.
-# Solo funciona para cambiar configuraciones propias de nosotros en Spring Cloud Config. Puerto y configuraciones de Base de Datos estamos 
-# obligados a Reiniciar el Microservicio. Si el Repo Git esta en local no es necesario hacer commit.
-$ curl -X POST http://localhost:8090/api/items/actuator/refresh
+	# Para refrescar los @Componentes que tengan @RefreshScope. Se invoca manualmente esta URL cuado se cambien datos en Spring Cloud Config
+	# de esta manera no es necesario Reiniciar el Servicio.
+	# Solo funciona para cambiar configuraciones propias de nosotros en Spring Cloud Config. Puerto y configuraciones de Base de Datos estamos 
+	# obligados a Reiniciar el Microservicio. Si el Repo Git esta en local no es necesario hacer commit.
+	$ curl -X POST http://localhost:8090/api/items/actuator/refresh
 
 ### Usuarios
 	[GET]
