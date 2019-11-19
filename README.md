@@ -46,12 +46,14 @@ https://start.spring.io/starter.zip?name=springboot-servicio.usuarios&groupId=co
 
 # Start RabbitMQ
 ```
+	## Simplemente Instalar RabbitMQ
 	$ sudo rabbitmq-server start
 	$ curl http://localhost:15672/
 ```
 
 # Start Zipkin
 ```
+	## Ver ../Zipkin-Server/Zipkin Server Install.txt
 	$ sh ./Zipkin-RabbitMQ.sh			# Zipkin solo RabbitMQ ejecutandose
 	$ sh ./Zipkin-RabbitMQ-MySQL.sh		# Zipkin solo RabbitMQ y MySQL ejecutandose
 		Crear Schema primero: schema_zipkin.sql
